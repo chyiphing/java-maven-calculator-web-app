@@ -12,8 +12,10 @@ import static org.junit.Assert.*;
 
 import static org.hamcrest.CoreMatchers.*;
 
+// Integration tests for the CalculatorService class.
 public class CalculatorServiceIT {
 
+    // Test the "ping" endpoint of the calculator API.
     @Test
     public void testPing() throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -23,6 +25,7 @@ public class CalculatorServiceIT {
         assertThat(EntityUtils.toString(response.getEntity()), containsString("Welcome to Java Maven Calculator Web App!!!"));
     }
 
+    // Test the "add" endpoint of the calculator API.
     @Test
     public void testAdd() throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -32,6 +35,7 @@ public class CalculatorServiceIT {
         assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":34"));
     }
 
+    // Test the "sub" endpoint of the calculator API.
     @Test
     public void testSub() throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -41,6 +45,7 @@ public class CalculatorServiceIT {
         assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":4"));
     }
 
+    // Test the "mul" endpoint of the calculator API.
     @Test
     public void testMul() throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -50,6 +55,7 @@ public class CalculatorServiceIT {
         assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":88"));
     }
 
+    // Test the "div" endpoint of the calculator API.
     @Test
     public void testDiv() throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
